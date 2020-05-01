@@ -1,8 +1,13 @@
 body {
-    background-color: purple;
+    margin: 0 auto;
+    max-width: 40rem;
 }
 
 div {
-    color: whitesmoke;
-    font-size: 10rem;
+    color: black;
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 2rem;
 }
