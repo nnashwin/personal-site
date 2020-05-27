@@ -3,12 +3,17 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{{template "title"}}</title>
-        <link rel="stylesheet" href="/static/stylesheets/main.css">
+        <link rel="stylesheet" href="/static/stylesheets/main.css" />
     </head>
     <body>
         <header>
-            <h3>Tyler Boright</h3>
+            <h1 class="blog-title">Tyler Boright</h1>
+            <nav>
+                <a href="localhost:3000/now">Now</a>
+                <a href="localhost:3000/about">About Me</a>
+                <a href="localhost:3000/projects">Projects</a>
+                <a href="localhost:3000/hireMe">Hire Me</a>
+            </nav>
         </header>
         {{template "body"}}
     </body>
