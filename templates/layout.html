@@ -3,16 +3,17 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="/static/stylesheets/valkyrie-c4-font.css" />
         <link rel="stylesheet" href="/static/stylesheets/main.css" />
     </head>
     <body>
         <header>
-            <h1 class="blog-title">Tyler Boright</h1>
+            <h1 class="blog-title"><a href="/" title="Tyler Boright">Tyler Boright</a></h1>
             <nav>
-                <a href="localhost:3000/now">Now</a>
-                <a href="localhost:3000/about">About Me</a>
-                <a href="localhost:3000/projects">Projects</a>
-                <a href="localhost:3000/hireMe">Hire Me</a>
+                <a href="/now">Now</a>
+                <a href="/about">About Me</a>
+                <a href="/projects">Projects</a>
+                <a href="/hireMe">Hire Me</a>
             </nav>
         </header>
         {{template "body"}}
