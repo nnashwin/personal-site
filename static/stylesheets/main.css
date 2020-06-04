@@ -15,22 +15,21 @@ article > h3 {
     margin-top: 4rem;
 }
 
-
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     line-height: 30px;
     margin: 0 auto;
-    max-width: 50rem;
+    max-width: 800px;
+    overflow: auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 header {
+    margin: 0 auto;
     text-align: center;
 }
-
-
 
 h1, h2, h3, h4 {
     font-family: 'valkyrie_c4', sans-serif;
@@ -38,6 +37,7 @@ h1, h2, h3, h4 {
 
 h1 {
     font-size: 50px;
+    margin: 4rem 0 0;
 }
 
 h2 {
@@ -72,6 +72,6 @@ p {
     font-size: 20px;
 }
 
-.blog-title {
-    padding-top: 1rem;
+p.description {
+    letter-spacing: 0.7px;
 }
