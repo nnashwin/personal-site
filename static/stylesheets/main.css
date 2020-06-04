@@ -11,39 +11,43 @@ a:visited {
     text-decoration: none;
 }
 
-nav > a:visited {
-    color: #767676;
+article > h3 {
+    margin-top: 4rem;
 }
-
 
 
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    line-height: 30px;
     margin: 0 auto;
-    max-width: 40rem;
+    max-width: 50rem;
+    padding: 0 20px;
 }
 
 header {
     text-align: center;
 }
 
-p {
-    color: black;
-    font-size: 30px;
-}
+
 
 h1, h2, h3, h4 {
     font-family: 'valkyrie_c4', sans-serif;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 50px;
 }
 
 h2 {
-    font-size: 26px;
+    font-size: 40px;
+    margin-top: 4rem;
+}
+
+h3 {
+    font-size: 30px;
+    margin-top: 3rem;
 }
 
 nav > a {
@@ -58,9 +62,14 @@ nav > a:hover {
     text-decoration: underline;
 }
 
+nav > a:visited {
+    color: #767676;
+}
+
 p {
-    font-family: 'ABeeZee', sans-serif;
-    font-size: 0.5rem;
+    color: black;
+    font-family: 'Georgia', sans-serif;
+    font-size: 20px;
 }
 
 .blog-title {
