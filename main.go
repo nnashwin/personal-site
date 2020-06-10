@@ -1,39 +1,60 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"html/template"
 	"net/http"
 	"path/filepath"
 )
 
-const staticFilePath = "./static/"
+const staticDirDefault = "./static/"
+const staticFlagUsage = "path to static directory"
+const templateDirDefault = "templates"
+const templateDirUsage = "path to template directory"
 
-func serveTemplate(w http.ResponseWriter, r *http.Request) {
-	cleanPath := filepath.Clean(r.URL.Path)
-	fPath := filepath.Join("templates", cleanPath+".html")
-	if cleanPath == "/" {
-		fPath = filepath.Join("templates", "home.html")
-	}
-	lPath := filepath.Join("templates", "layout.html")
+// use the closure to store the templateDir string
+// return a function that maps the writer interface in order to be applicable
+// to serve in HandleFunc
+func serveTemplate(templateDir string) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		cleanPath := filepath.Clean(r.URL.Path)
+		fPath := filepath.Join(templateDir, cleanPath+".html")
+		if cleanPath == "/" {
+			fPath = filepath.Join(templateDir, "home.html")
+		}
+		lPath := filepath.Join(templateDir, "layout.html")
 
-	t, err := template.ParseFiles(lPath, fPath)
-	if err != nil {
-		fmt.Println("template parsing err: ", err)
-	}
+		t, err := template.ParseFiles(lPath, fPath)
+		if err != nil {
+			fmt.Println("template parsing err: ", err)
+		}
 
-	err = t.ExecuteTemplate(w, "layout", nil)
-	if err != nil {
-		fmt.Println("template execution err: ", err)
+		err = t.ExecuteTemplate(w, "layout", nil)
+		if err != nil {
+			fmt.Println("template execution err: ", err)
+		}
 	}
 }
 
 func main() {
-	fs := http.FileServer(http.Dir("./static"))
+	var staticDir string
+	var templateDir string
+
+	flag.StringVar(&staticDir, "static", staticDirDefault, staticFlagUsage)
+	flag.StringVar(&staticDir, "sd", staticDirDefault, staticFlagUsage)
+
+	flag.StringVar(&templateDir, "templates", templateDirDefault, templateDirUsage)
+	flag.StringVar(&templateDir, "td", templateDirDefault, templateDirUsage)
+
+	flag.Parse()
+
+	fs := http.FileServer(http.Dir(staticDir))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
-	http.HandleFunc("/", serveTemplate)
-	fmt.Println("Listening on :3000...")
-	err := http.ListenAndServe(":3000", nil)
+	// add the templateDir string
+	http.HandleFunc("/", serveTemplate(templateDir))
+	fmt.Println("Listening on :8080...")
+	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		fmt.Println(err)
 	}
