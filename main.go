@@ -50,6 +50,7 @@ func main() {
 	flag.Parse()
 
 	fs := http.FileServer(http.Dir(staticDir))
+	// strip the static prefix from the api in order to make more memorable paths
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 	// add the templateDir string
 	http.HandleFunc("/", serveTemplate(templateDir))
