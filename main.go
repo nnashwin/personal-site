@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"path/filepath"
 )
@@ -57,6 +58,6 @@ func main() {
 	fmt.Println("Listening on :8080...")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal("ListenAndServe: ", err)
 	}
 }
