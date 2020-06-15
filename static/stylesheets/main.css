@@ -34,7 +34,7 @@ header > h1 {
     margin: 0;
 }
 
-h1, h2, h3, h4, small {
+h1, h2, h3, h4, footer, small{
     font-family: 'valkyrie_c4', sans-serif;
 }
 
