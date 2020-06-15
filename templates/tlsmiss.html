@@ -1,0 +1,53 @@
+{{define "title"}}Misconceptions about TLS{{end}}
+{{define "body"}}
+<section>
+    <h2>Misconceptions about TLS</h2>
+    <p>Before writing this blog, I had never solved the issue of setting up SSL/TLS on a website.  I had heard of the concept and knew that it was important in order to encrypt data being sent from browser to server, but without having run through the actual process, I didn't really know what is necessary or how to get a certificate form a Certificate Authority (CA).</p>
+    <p>The following are misconceptions I had that enabled me to understand more of how the SSL/TLS process and how to set it up on your own website.</p>
+    <h3>OpenSSL</h3>
+    <p>I had made certs and keys during development using openssl previously, so I thought I could just generate a key / cert pair using an openssl command similar to the following:</p>
+    <code>
+        RSA Version
+
+	openssl req \
+	    -new \
+	    -newkey rsa:4096 \
+	    -days 365 \
+	    -nodes \
+	    -x509 \
+	    -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.mySiteName.com" \
+	    -keyout www.mySiteName.com.key \
+	    -out www.mySiteName.com.cert
+    </code>
+    <p>Once I had the cert and key, I would then use those two files to run a server which would first perform the TLS handshake before allowing a request.</p>
+    <p>The site is written in golang, which should look like this example:</p>
+    <code>
+        package main
+
+        import (
+                "io"
+                "log"
+                "net/http"
+        )
+
+        func main() {
+                http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+                        io.WriteString(w, "Hello, TLS!\n")
+                })
+
+                // One can use generate_cert.go in crypto/tls to generate cert.pem and key.pem.
+                log.Printf("About to listen on 8443. Go to https://127.0.0.1:8443/")
+                err := http.ListenAndServeTLS(":8443", "www.mySiteName.com.cert", "www.mySiteName.com.key", nil)
+                log.Fatal(err)
+        }
+    </code>
+    <p>After tinkering with the example and making it work with my pre-written api, I was greeted with that sweet sensation of the console displaying what you program it to.</p>
+    <code>About to listen on 8443. Go to https://127.0.0.1:8443/</code>
+    <p>But my work was not done.  When I navigated to the url listed above I was greeted with a surprise.</p>
+    <h3>You can't Sign your own SSL Certs</h3>
+    <figure>
+        <img src="" alt="A browser showing an untrusted certificate.">
+        <figcaption>Self-signed certs are not safe.</figcaption>
+    </figure>
+    <p>I was greeted with the following image</p>
+</section>
