@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 )
 
@@ -24,17 +25,37 @@ func serveTemplate(templateDir string) func(w http.ResponseWriter, r *http.Reque
 		if cleanPath == "/" {
 			fPath = filepath.Join(templateDir, "home.html")
 		}
+
 		lPath := filepath.Join(templateDir, "layout.html")
+
+		info, err := os.Stat(fPath)
+		if err != nil {
+			if os.IsNotExist(err) {
+				http.NotFound(w, r)
+				return
+			}
+		}
+
+		if info.IsDir() {
+			http.NotFound(w, r)
+			return
+		}
 
 		t, err := template.ParseFiles(lPath, fPath)
 		if err != nil {
 			fmt.Println("template parsing err: ", err)
+			http.Error(w, http.StatusText(500), 500)
+			return
 		}
 
 		err = t.ExecuteTemplate(w, "layout", nil)
 		if err != nil {
 			fmt.Println("template execution err: ", err)
+			http.Error(w, http.StatusText(500), 500)
+			return
 		}
+
+		fmt.Printf("serving %s\n", cleanPath)
 	}
 }
 
