@@ -1,4 +1,4 @@
-a {
+a, a:visited {
     text-decoration: none;
 }
 
@@ -6,9 +6,8 @@ a:hover {
     text-decoration: underline;
 }
 
-a:visited {
-    color: black;
-    text-decoration: none;
+article > a {
+    font-size: 20px;
 }
 
 article > h3 {
@@ -31,7 +30,11 @@ header {
     text-align: center;
 }
 
-h1, h2, h3, h4 {
+header > h1 {
+    margin: 0;
+}
+
+h1, h2, h3, h4, small {
     font-family: 'valkyrie_c4', sans-serif;
 }
 
@@ -40,14 +43,23 @@ h1 {
     margin: 4rem 0 0;
 }
 
+h1 > a:visited {
+    color: black;
+    text-decoration: none;
+}
+
 h2 {
     font-size: 40px;
-    margin-top: 4rem;
+    margin: 4rem 0 0;
 }
 
 h3 {
     font-size: 30px;
     margin-top: 3rem;
+}
+
+html {
+    margin: 4rem 0;   
 }
 
 nav > a {
@@ -74,4 +86,9 @@ p {
 
 p.description {
     letter-spacing: 0.7px;
+}
+
+small {
+    color: #666;
+    font-size: 16px;
 }
