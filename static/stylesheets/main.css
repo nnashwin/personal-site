@@ -21,7 +21,14 @@ body {
     margin: 0 auto;
     max-width: 800px;
     overflow: auto;
-    padding: 0 20px;
+    width: 100%;
+}
+
+figcaption {
+    text-align: center;
+}
+
+figure > img {
     width: 100%;
 }
 
@@ -90,6 +97,10 @@ p {
 
 p.description {
     letter-spacing: 0.7px;
+}
+
+section {
+    padding: 0 20px;
 }
 
 small {
