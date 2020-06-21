@@ -62,6 +62,10 @@ html {
     margin: 4rem 0;   
 }
 
+li {
+    list-style: none;
+}
+
 nav > a {
     color: #767676;
     font-family: 'Georgia', serif;
