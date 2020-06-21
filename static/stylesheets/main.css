@@ -17,7 +17,7 @@ article > h3 {
 body {
     display: flex;
     flex-direction: column;
-    line-height: 30px;
+    line-height: 34px;
     margin: 0 auto;
     max-width: 800px;
     overflow: auto;
