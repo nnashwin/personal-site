@@ -107,3 +107,8 @@ small {
     color: #666;
     font-size: 16px;
 }
+
+span.copy-url {
+    font-family: 'Georgia', sans-serif;'
+    font-size: 26px;
+}
