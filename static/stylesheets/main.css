@@ -99,6 +99,13 @@ p.description {
     letter-spacing: 0.7px;
 }
 
+p.tldr-block {
+    font-size: 24px;
+    font-style: italic;
+    padding: 20px 0;
+    text-align: center;
+}
+
 section {
     padding: 0 20px;
 }
