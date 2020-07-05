@@ -25,6 +25,8 @@ body {
 }
 
 figcaption {
+    color: rgb(118, 117, 117, 1);
+    font-size: 18px;
     text-align: center;
 }
 
