@@ -1,12 +1,19 @@
 {{define "title"}}The Right Way to do Automation | Tyler Boright{{end}}
 {{define "body"}}
 <section>
-    <h2>The Right Way to Automate</h2>
+    <h2>The Right Way to Automate Testing</h2>
     <p>The concept of automation is not new to the software industry.  Since there have been processes to test and flaky builds, there has been the need to define software that can test it and report the results to humans.</p>
     <p>It was new to me when I worked at my first corporate job.  Having done front-end development for a few years at multiple start ups, I was surprised that I hadn't even heard of the idea of automated UI testing.</p>
     <p>After working on automation for a few months, it became evident that it was valuable, but also difficult to implement in a way that doesn't break due to extraneous issues every time someone wants to merge into master.</p>
     <p>More recently, I have had the opportunity to help a couple of friends automation a project that has been easier to manage.  We started out by <b>defining a clear goal for the task we are automating</b>. The smaller scale, focus on customer satisfaction (the person whose task is helping to automate) over coverage numbers, and bringing in an outside tester (me) to hammer the artifact has led to the development of a stable, healthier automation project.</p>
     <h3>Automation is just testing</h3>
+    <p>Automation in the software industry is usually referring to either build automation, task automation, or test automation.  The latter has become a trend in recent years (and maybe before, I don't have context here) as companies push for software teams to write code faster while trying to maintain quality.  Automation testing of APIs and UI components is a hot topic, and many companies have jumped behind it with gusto.</p>
+    <figure>
+        <img src="/static/images/automation-so-hot.jpg" alt="Image of Will Farrell in Zoolander saying 'Hansel, he's so hot right now.'">
+        <figcaption>Automation, it's so hot right now!</figcaption>
+    </figure>
+    <p>But like most things in computing, automation by itself does not solve your problem. The coolest automated testing architecture with multiple suites, parallel tests, and easy-to-use test writing tools (I'm looking at you Gherkin)</p>
+    <p>Due to trends in the industry, many large companies jump behind automation</p>
     <p class="tldr-block"><b>TL;DR:</b> Automation is only as useful as the task you automate.  It doesn't always add value.</p>
 </section>
 {{end}}
