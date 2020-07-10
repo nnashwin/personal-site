@@ -121,3 +121,7 @@ span.copy-url {
     font-family: 'Georgia', sans-serif;'
     font-size: 26px;
 }
+
+.line-through {
+    text-decoration: line-through;
+}
