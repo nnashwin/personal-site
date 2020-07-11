@@ -1,7 +1,7 @@
 {{define "title"}}The Right Way to do Automation | Tyler Boright{{end}}
 {{define "body"}}
 <section>
-    <h2>The Right Way to Automate Testing</h2>
+    <h2>Why Automation Sucks (and how to make it better).</h2>
     <p>The concept of automation is not new to the software industry.  Since there have been processes to test and flaky builds, there has been the need to define software that can test it and report the results to humans.</p>
     <p>It was new to me when I worked at my first corporate job.  Having done front-end development for a few years at multiple start ups, I was surprised that I hadn't even heard of the idea of automated UI testing.</p>
     <p>After working on automation for a few months, it became evident that it was valuable, but also difficult to implement in a way that doesn't break due to extraneous issues every time someone wants to merge into master.</p>
@@ -13,7 +13,16 @@
         <figcaption>Automation, it's so hot right now!</figcaption>
     </figure>
     <p>But like most things in computing, automation by itself does not solve your problem. The coolest automated testing architecture with multiple suites, parallel tests, and easy-to-use test writing tools (I'm looking at you Gherkin)</p>
-    <p>Due to trends in the industry, many large companies jump behind automation</p>
+    <p>Due to trends in the industry, many large companies jump behind automation as the solution for all of their defect problems.  Tasking engineers to write automation tests with new features they add, this is another case of expecting the tool to solve the problem.</p>
+    <p>Citing automation tools as solutions to defects may look good on paper. Letting go of the majority of quality assurance people within the company in order to cut costs may help you make budget for this year.  Company owners should know, however, that swinging too far to the automation direction and expecting engineers to write code, unit tests, and valuable automation tests will often result in larger costs long-term.</p>
+    <h3>Engineers have bias</h3>
+    <p>Even the most effective engineers have a subconscious bias when writing code.  In the same way that professional authors send their manuscripts to editors, there will always be a bias towards what you create.</p>
+    <p>This bias may be negligible, but it is often easy for an engineer to dismiss edge cases in a piece of software s/he has written with a casual "no one will use it that way".  When writing applications that need to have low amounts of defects, you must have a group of people trying to break the product.</p>
+    <p>Having trained professionals who look to break a product can do well to harden core features you develop. If quality is dire for your business, it is important that you maintain a solid number of these people to "wreck shit".</p>
+    <p>Only when you employ shit wreckers can you isolate, solve, and write tests for edge cases that encompass large features in your software.</p>
+    <h3>Birth of the Automation Queen</h3>
+    <p>Finding engineers who are willing to solely work on automation may prove difficult.  However, making maintenance of a product's automation pipeline and testing everyone's problem tends to make it no one's problem. In favor of deadlines and "more interesting work", I have seen engineers often put automation and quality low on their list of priorities.  So low, in fact, that the automation task might give Virgil a run for his money when {finish Dante reference here}.</p>
+    <p>If one engineer on a team is on automation and related tools full time, it can prove to be more manageable.  Depending on the amount of freedome you give him or her, Delving deep into the dark arts of automation can also be fun for the engineer who can focus on writing solid tests and breaking the application.</p>
     <p class="tldr-block"><b>TL;DR:</b> Automation is only as useful as the task you automate.  It doesn't always add value.</p>
 </section>
 {{end}}
