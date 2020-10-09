@@ -16,6 +16,7 @@ body {
     line-height: 34px;
     margin: 0 auto;
     max-width: 800px;
+    padding: 0 0 3rem 0;
     overflow: auto;
     width: 100%;
 }
