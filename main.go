@@ -28,7 +28,7 @@ func serveTemplate(templateDir string) func(w http.ResponseWriter, r *http.Reque
 		}
 
 		if strings.Contains(fPath, "draft") {
-			http.Redirect(w, r, r.URL.Host, http.MovedPermanently)
+			http.Redirect(w, r, r.URL.Host, http.StatusMovedPermanently)
 			return
 		}
 
