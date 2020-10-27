@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 const staticDirDefault = "./static/"
@@ -24,6 +25,11 @@ func serveTemplate(templateDir string) func(w http.ResponseWriter, r *http.Reque
 		fPath := filepath.Join(templateDir, cleanPath+".html")
 		if cleanPath == "/" {
 			fPath = filepath.Join(templateDir, "home.html")
+		}
+
+		if strings.Contains(fPath, "draft") {
+			http.Redirect(w, r, r.URL.Host, http.MovedPermanently)
+			return
 		}
 
 		lPath := filepath.Join(templateDir, "layout.html")
