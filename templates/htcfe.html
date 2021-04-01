@@ -1,0 +1,44 @@
+{{define "title"}}How to Choose a Front-End Framework | Tyler Boright{{end}}
+{{define "body"}}
+<section>
+    <h2>How to Choose a Front-End Framework</h2>
+    <p>You might be new to front-end development, confused about the front-end ecosystem and all of its complexities.</p>
+    <p>You might be an experienced front-end developer, confused about the front-end ecosystem and all the new complexities created in the past six months.</p>
+    <p>Regardless, your company has tasked you with building a web application to solve business problems. You will need to meet business needs through front-end code.</p>
+    <p>The front-end ecosystem is one of the fastest communities I have ever been a part of.  If you happened to be working on a stable project at work for more than 6 months without doing exploratory learning, you are already behind the meta.</p>
+    <p>In a world of countless best practices and hottest frameworks renewed annually, what are you to do?</p>
+    <p>Close your "hottest front-end frameworks of 2021" article and take a survey of your knowledge, your project, and your team. Only by deep diving into these three areas can you choose the best direction to set off in.</p>
+    {{I AM HERE}}
+    <h3>What do you have now?</h3>
+    <p>In order to best choose which framework to use, you must understand your project.  Will this application be nested inside another?  Will you deploy it up to AWS?  Will you need to hack in some custom code to load React in Angular? If you are building anew, how will you make it work with the current system architecture?</p>
+    <p>The best solution you can devise will almost always involve integrating with or migrating from your pre-existing architecture. Not only can you recycle old functionality, but unless someone meticulously documented the previous project requirements, it is likely your new implementation will not consider some use case or undocumented section of the user base..</p>
+    <p>Common wisdom goes as time goes on, a legacy codebase becomes more intractable.  At the same time, as time goes on, a widely-used legacy codebase becomes more difficult to reproduce.</p> 
+    <p>You don't want to force a framework into an application that already has clear architecture decisions.  If the login portal is written in Angular 2, and you are tasked with creating a new user flow to be used within the portal, strongly consider using Angular 2.</p>
+    <p>On the other hand, if you are give free reign to write a new application from scratch, feel free to go ham and make opinionated decisions that should work in the long run.</p>
+    <h3>Frame your decision by the project itself</h3>
+    <p>Having been a huge framework fanboy in the past, there have been more than one instance where I have rewritten a similar project multiple times to satisfy my curiosity.</p>
+    <p>In the context of learning, there is nothing wrong with this approach.  In the context of the project, this can turn into a nightmare.</p>
+    <p>Rewrite may pique your curiosity and help you grow your knowledge (at times) as a developer.   However, rewrites hurt a project and can sometimes even lead to a <a href="https://www.imdb.com/title/tt0499004/">company's ruin</a>.</p>
+    <h3>What do you know?</h3>
+    <p>When choosing a front-end framework for your new web application, it's important to take into account what types of projects you have have written before. If you have a relaxed deadline for the project, write the code in a way that maximizes your fun while being reasonably maintainable.  If you don't have that freedom, it is important to think about the level of your own knowledge when choosing a technology stack.</p>
+    <p>Vue might be the hot new thing at the time, but if you have only ever built <a href="https://en.wikipedia.org/wiki/Jakarta_Server_Page">Java Server Pages</a>, you could delay the timeline of the project due to needing to learn many new things simultaneously. Choosing an implementation strategy with so many unknowns could prove to be a disaster for your team.</p> 
+    <p>Each time you work on a project you have two people's expectations to fulfill: your boss's (client) and your own.</p> 
+    <p>If you neglect one for too long you will be out of a job.  If you neglect the other, you may lose your passion.  A programmer without passion has started down the long journey of either bitterness or becoming management.</p> 
+    <p>Balance your own curiosity with the project requirements at hand.  If you look for opportunities to learn, you can often complete a project while learning quite a bit in the process.</p>
+    <h3>What does your team know?</h3>
+    <p>When choosing a framework to write our code, we often do not consider what our team is familiar with.</p>
+    <p>We assume our team is smart. Because of this, it is easy to fall into the trap of thinking that our teammates will be able to handle any new technologies we throw at that.</p>
+    <p>Since we have this tendency, it is import to clarify our definition of smart when it comes to our team mates.  Smart does not mean that they know (or should know) everything that we do.  Our teammates may have experience broader in some areas or deeper in others than what we have.</p>
+    <p>The biggest problem with assuming that our teammates have the exact same knowledge set is the compounding of learning time that can arise when we expect them to know something they don't.</p>
+    <p>When each technical member of the team needs to learn something new, we may encounter a compounding of learning requirements that delay or influence the quality of the project.</p>
+    <p>If your team is full of people who are willing to learn on their own, we can approximate the calculation by multiplying the amount of team members by at least the time it took you to learn.  This also does not include the time it will take future team members to understand how you used certain features of the new technology.</p>
+    <p>Although we may be called upon to start a software project on our own, there will come a point where we will no longer work on it.  If the project gained traction, someone else will be asked to bear the weight of our decisions.</p>
+    <p>As you choose your technology stack, think of the engineers who will use what you are building in the future.</p>
+    <h3>What are you interested in?</h3>
+    <p>When choosing which framework to use, your personal interest should play a factor in your decision.</p>  
+    <p>The fundamentals of front-end applications remain the same across frameworks.  Even if frameworks use different programming paradigms, they all abstract over apis that are relatively consistent (the browser).</p>
+    <p>Choose one, invest time to learn it well and run with it.</p> 
+    <p>If your requirements allow it, choose the most interesting way of solving your problem and start to prototype.  Learn the basic principles of the framework.  Focus on using the new technology to deliver features to your stakeholders.  As long as you take effort to remember concepts and important details of what you learn (maybe through <a href="https://www.tylerboright.com/longlearn">incremental learning</a>, you will continue to grow into a more valuable developer.</p> 
+    <p>Balancing your interest in your work is your job.  No one will do this for you!  If you find a way to continue,  you will avoid burnout and continue passionate work for the rest of your life.</p>
+</section>
+{{end}}
