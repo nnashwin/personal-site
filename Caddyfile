@@ -7,3 +7,5 @@ tylerboright.com {
     encode zstd gzip
     reverse_proxy localhost:8080
 }
+
+tls self_signed
