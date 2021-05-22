@@ -1,3 +1,9 @@
-tylerboright.com
+www.tylerboright.com {
+    encode zstd gzip
+    reverse_proxy localhost:8080
+}
 
-reverse_proxy localhost:8080
+tylerboright.com {
+    encode zstd gzip
+    reverse_proxy localhost:8080
+}
