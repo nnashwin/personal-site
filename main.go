@@ -22,6 +22,13 @@ const templateDirUsage = "path to template directory"
 func serveTemplate(templateDir string) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		cleanPath := filepath.Clean(r.URL.Path)
+
+		// handles sitemap.xml and robots.txt in the root directory
+		if strings.Contains(cleanPath, ".txt") || strings.Contains(cleanPath, ".xml") {
+			http.ServeFile(w, r, "static/"+cleanPath)
+			return
+		}
+
 		fPath := filepath.Join(templateDir, cleanPath+".html")
 		if cleanPath == "/" {
 			fPath = filepath.Join(templateDir, "home.html")
